@@ -23,6 +23,21 @@ the ``movies`` collection.
 .. literalinclude:: /includes/usage-examples/code-snippets/Find.java
    :language: java
 
+The output of the above code snippet should look like this:
+
+.. code-block:: json
+
+   {
+       "name":"John",
+       "age":30,
+       "cars": {
+           "car1":"Ford",
+           "car2":"BMW",
+           "car3":"Fiat"
+       }
+   }
+
+
 The code snippet above uses the following objects and methods:
 
 - A **query filter** that is passed in the ``find()`` method. The ``lt()``
