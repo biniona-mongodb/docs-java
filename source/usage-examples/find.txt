@@ -19,20 +19,21 @@ collection.
 This code snippet finds and prints all documents that match a query on
 the ``movies`` collection. It uses the following objects and methods:
 
-.. include:: /includes/connect-guide-note.rst
 
 .. literalinclude:: /includes/usage-examples/code-snippets/Find.java
    :language: java
 
 - A **query filter** that is passed in the ``find()`` method. The ``lt()``
-filter matches only movies with a runtime of less than 15 minutes.
+  filter matches only movies with a runtime of less than 15 minutes.
 
 - A **sort** that organizes returned documents in descending order by
-title ("Z" before "A").
+  title ("Z" before "A").
 
 - A **projection** that includes the objects in the ``title`` and ``imdb``
-fields and excludes the ``_id`` field using the helper method
-``excludeId()``.
+  fields and excludes the ``_id`` field using the helper method
+  ``excludeId()``.
+
+- For more background on connection uri's see our connection guide. 
 
 More Background
 ---------------
@@ -86,6 +87,12 @@ values, and errors that you can encounter in the above example.
       ``java.util.NoSuchElementException``. Always use ``hasNext()`` to check that
       additional results exist before every time you call ``next()``.
 
+Further Reading
+---------------
+
+API Docs 
+~~~~~~~~
+
 For additional information on the classes and methods mentioned on this
 page, see the following API documentation:
 
@@ -94,3 +101,7 @@ page, see the following API documentation:
 - :java-sync-api:`MongoCursor <com/mongodb/client/MongoCursor.html>`
 - :java-sync-api:`find() <com/mongodb/client/MongoCollection.html#find()>`
 
+Manual
+~~~~~~
+
+<SOME MANUAL LINKS>
