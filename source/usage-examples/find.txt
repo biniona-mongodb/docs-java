@@ -4,36 +4,41 @@ Find Multiple Documents
 
 .. default-domain:: mongodb
 
-
-
-
-
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
 
 Example
 -------
 
-The following snippet finds and prints all documents that match a query on
+The following example shows how to retrieve multiple documents from your MongoDB
+collection. 
+
+This code snippet finds and prints all documents that match a query on
 the ``movies`` collection. It uses the following objects and methods:
-
-- A **query filter** that is passed in the ``find()`` method. The ``lt()``
-  filter matches only movies with a runtime of less than 15 minutes.
-
-- A **sort** that organizes returned documents in descending order by
-  title ("Z" before "A").
-
-- A **projection** that includes the objects in the ``title`` and ``imdb``
-  fields and excludes the ``_id`` field using the helper method
-  ``excludeId()``.
 
 .. include:: /includes/connect-guide-note.rst
 
 .. literalinclude:: /includes/usage-examples/code-snippets/Find.java
    :language: java
 
-.. note::
+- A **query filter** that is passed in the ``find()`` method. The ``lt()``
+filter matches only movies with a runtime of less than 15 minutes.
 
-   If you are using the **legacy API**, see the :doc:`FAQ </faq>` to determine 
-   what changes you need to make to this code example.
+- A **sort** that organizes returned documents in descending order by
+title ("Z" before "A").
+
+- A **projection** that includes the objects in the ``title`` and ``imdb``
+fields and excludes the ``_id`` field using the helper method
+``excludeId()``.
+
+More Background
+---------------
+
+In this section, we provide in depth background on the method, options, return
+values, and errors that you can encounter in the above example.
 
 .. tabs::
 
