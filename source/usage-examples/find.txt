@@ -4,36 +4,9 @@ Find Multiple Documents
 
 .. default-domain:: mongodb
 
-You can query for multiple documents in a collection by calling the ``find()``
-method on a ``MongoCollection`` object. Pass a query filter to the
-``find()`` method to query for and return documents that match the filter in
-the collection. If you do not include a filter, MongoDB returns all the
-documents in the collection.
 
-For more information on querying MongoDB with the Java driver, see our
-guide (TODO: link) to querying documents.
 
-You can also chain methods to the ``find()`` method such as ``sort()``
-(TODO: link) which organizes the matched documents in a specified order and
-``projection()`` (TODO: link) which configures the included fields in the
-return document.
 
-The ``find()`` method returns an instance of ``FindIterable``, a class
-that offers several methods to access, organize, and traverse the results.
-``FindIterable`` also inherits methods from its parent class,
-``MongoIterable`` which implements the core Java interface ``Iterable``.
-
-You can call the ``iterator()`` method on the ``MongoIterable`` which
-returns a ``MongoCursor`` instance that you can use to traverse the results.
-You can call methods on the ``MongoCursor`` such as ``hasNext()`` to check
-whether additional results exist, or ``next()`` to return the next document
-in the collection. If no documents match the query, calling ``hasNext()``
-returns ``false`` and therefore calling ``next()`` throws an exception.
-
-If you call ``next()`` on the iterator either after it has returned the final
-result or when no results exist, it throws an exception of type
-``java.util.NoSuchElementException``. Always use ``hasNext()`` to check that
-additional results exist before every time you call ``next()``.
 
 
 Example
@@ -61,6 +34,52 @@ the ``movies`` collection. It uses the following objects and methods:
 
    If you are using the **legacy API**, see the :doc:`FAQ </faq>` to determine 
    what changes you need to make to this code example.
+
+.. tabs::
+
+   .. tab:: Method
+      :tabid: method
+
+      You can query for multiple documents in a collection by calling the ``find()``
+      method on a ``MongoCollection`` object. Pass a query filter to the
+      ``find()`` method to query for and return documents that match the filter in
+      the collection. If you do not include a filter, MongoDB returns all the
+      documents in the collection.
+
+      For more information on querying MongoDB with the Java driver, see our
+      guide (TODO: link) to querying documents.
+
+   .. tab:: Options
+      :tabid: options
+      
+      You can also chain methods to the ``find()`` method such as ``sort()``
+      (TODO: link) which organizes the matched documents in a specified order and
+      ``projection()`` (TODO: link) which configures the included fields in the
+      return document.
+
+   .. tab:: Return
+      :tabid: return
+
+      The ``find()`` method returns an instance of ``FindIterable``, a class
+      that offers several methods to access, organize, and traverse the results.
+      ``FindIterable`` also inherits methods from its parent class,
+      ``MongoIterable`` which implements the core Java interface ``Iterable``.
+
+      You can call the ``iterator()`` method on the ``MongoIterable`` which
+      returns a ``MongoCursor`` instance that you can use to traverse the results.
+      You can call methods on the ``MongoCursor`` such as ``hasNext()`` to check
+      whether additional results exist, or ``next()`` to return the next document
+      in the collection. If no documents match the query, calling ``hasNext()``
+      returns ``false`` and therefore calling ``next()`` throws an exception.
+
+        
+   .. tab:: Errors
+      :tabid: error
+
+      If you call ``next()`` on the iterator either after it has returned the final
+      result or when no results exist, it throws an exception of type
+      ``java.util.NoSuchElementException``. Always use ``hasNext()`` to check that
+      additional results exist before every time you call ``next()``.
 
 For additional information on the classes and methods mentioned on this
 page, see the following API documentation:
