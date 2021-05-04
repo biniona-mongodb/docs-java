@@ -19,9 +19,14 @@ collection.
 This code snippet finds and prints all documents that match a query on
 the ``movies`` collection.
 
+Code
+~~~~
 
 .. literalinclude:: /includes/usage-examples/code-snippets/Find.java
    :language: java
+
+Output
+~~~~~~
 
 The output of the above code snippet should look like this:
 
@@ -37,6 +42,8 @@ The output of the above code snippet should look like this:
        }
    }
 
+Background
+~~~~~~~~~~
 
 The code snippet above uses the following objects and methods:
 
