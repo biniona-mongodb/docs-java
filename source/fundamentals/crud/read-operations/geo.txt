@@ -51,12 +51,6 @@ For a concrete reference, GeoJSON data often resembles the following structure:
       ]
    }
 
-For definitive information on GeoJSON, see the
-`official IETF GeoJSON specification <https://tools.ietf.org/html/rfc7946>`__.
-
-.. external resource
-
-
 GeoJSON Types
 ~~~~~~~~~~~~~
 
@@ -87,10 +81,6 @@ Here are some common GeoJSON types and their corresponding positions:
 - ``Polygon``: a list of positions in which the first and last
   position are the same, thus enclosing some space.
 
-To learn more about the GeoJSON shapes you can use in MongoDB, see the
-:manual:`GeoJSON manual entry </reference/geojson/>`.
-
-.. external resource
 
 Index
 ~~~~~
@@ -106,11 +96,6 @@ GeoJSON data to  a ``2dsphere`` index. The following snippet creates a
    // <MongoCollection setup code here>
 
    collection.createIndex(geo2dsphere("location.geo"));
-
-For more information on the ``Indexes`` builder, see our 
-:doc:`guide on the Indexes builder </fundamentals/builders/indexes>`.
-
-.. guide resource
 
 Coordinates on a 2D Plane
 -------------------------
@@ -143,13 +128,7 @@ legacy coordinate pairs to  a ``2d`` index. The following snippet creates a
 
    collection.createIndex(geo2d("coordinates"));
 
-For more information on the ``Indexes`` builder, see our 
-:doc:`guide on the Indexes builder </fundamentals/builders/indexes>`. 
-   
-For more information on legacy coordinate pairs, see the
-:manual:`MongoDB server manual page on legacy coordinate pairs </geospatial-queries/#legacy-coordinate-pairs>`.
 
-.. external resource
 
 .. note::
 
@@ -177,15 +156,7 @@ To query your geospatial data, use one of the following query operators:
 
 You can specify these query operators in the MongoDB Java driver with the
 ``near()``, ``geoWithin()``, ``nearSphere()``, and ``geoIntersects()`` utility
-methods of the ``Filters`` builder class.
-
-For more information on geospatial query operators, see the
-:manual:`manual entry for geospatial queries </geospatial-queries/#geospatial-query-operators>`.
-
-.. external resource
-
-For more information on ``Filters``, see our 
-:doc:`guide on the Filters builder </fundamentals/builders/filters>`.  
+methods of the ``Filters`` builder class. 
 
 Query Parameters
 ~~~~~~~~~~~~~~~~
@@ -194,17 +165,12 @@ To specify the GeoJSON shapes used as parameters in geospatial queries, use the
 ``Position``, ``Point``, ``LineString``, and ``Polygon`` classes of the MongoDB
 Java driver.
 
-For a full list of GeoJSON shapes available in the MongoDB Java driver, see the
-:java-docs:`GeoJSON package </apidocs/mongodb-driver-core/com/mongodb/client/model/geojson/package-summary.html>`.
-
-.. external resource
-
 Examples
 --------
 
 The following examples use the MongoDB Atlas sample dataset. You can learn how
 to  set up your own free-tier Atlas cluster and how to load the sample dataset
-in our :doc:`quick start guide </quick-start>`.
+in our quick start.
 
 The examples use the ``theaters`` collection in the ``sample_mflix`` database
 from the sample dataset. The ``theaters`` collection contains a ``2dsphere`` index
@@ -258,12 +224,6 @@ The output of the code snippet should look something like this:
    {"location": {"address": {"city": "Flushing"}}}
    {"location": {"address": {"city": "Elmhurst"}}}
 
-For more information on the ``$near`` operator, see  
-:manual:`the reference documentation for $near </reference/operator/query/near/#mongodb-query-op.-near>`.
-
-For more information on ``Filters``,
-:doc:`see our guide on the Filters builder </fundamentals/builders/filters>`.
-
 Query Within a Range
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -295,12 +255,35 @@ The output of the code snippet should look something like this:
    {"location": {"address": {"city": "Massapequa"}}}
 
 
-For more information on the ``$geoWithin`` operator, see the
-:manual:`reference documentation for $geoWithin </reference/operator/query/geoWithin/>`
+Further Reading
+---------------
 
-.. external resource
+For information on the topics discussed on this page, visit the following links.
 
-For more information on the operators you can use in your query, see the
-:manual:`MongoDB server manual page on geospatial query operators </geospatial-queries/index.html>`
+MongoDB Java Driver Guides
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. external resource
+- :doc:`Guide on the Filters builder </fundamentals/builders/filters>`
+- :doc:`Guide on the Indexes builder </fundamentals/builders/indexes>`
+- :doc:`quick start guide </quick-start>`
+
+MongoDB Manual 
+~~~~~~~~~~~~~~
+
+- :manual:`MongoDB server manual page on geospatial query operators </geospatial-queries/index.html>`
+- :manual:`Reference documentation for $geoWithin </reference/operator/query/geoWithin/>`
+- :manual:`Reference documentation for $near </reference/operator/query/near/#mongodb-query-op.-near>`
+- :manual:`GeoJSON manual entry </reference/geojson/>`
+- :manual:`MongoDB server manual page on legacy coordinate pairs </geospatial-queries/#legacy-coordinate-pairs>`
+- :manual:`Manual entry for geospatial queries </geospatial-queries/#geospatial-query-operators>`.
+
+
+External Resources
+~~~~~~~~~~~~~~~~~~
+
+- `official IETF GeoJSON specification <https://tools.ietf.org/html/rfc7946>`__
+
+MongoDB Java Driver API Documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :java-docs:`GeoJSON package </apidocs/mongodb-driver-core/com/mongodb/client/model/geojson/package-summary.html>`
