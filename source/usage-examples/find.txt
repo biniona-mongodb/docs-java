@@ -17,7 +17,10 @@ The following example shows how to retrieve multiple documents from your MongoDB
 collection. 
 
 This code snippet finds and prints all documents that match a query on
-the ``movies`` collection of the Atlas sample dataset.
+the ``movies`` collection of the Atlas sample dataset. 
+
+To learn how to set up a free tier atlas cluster with the sample dataset, follow
+the :doc:`quick start guide </quick-start>`.
 
 Code
 ~~~~
