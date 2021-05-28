@@ -28,55 +28,7 @@ Monitoring the MongoDB Java driver lets you understand the
 driver's resource usage and performance, and can help you make informed
 decisions when designing and debugging your application.    
 
-.. What can you expect to see on this page?
 
-On this page you will learn how to perform these tasks:
-
-- :ref:`Monitor different types of events in the MongoDB Java Driver <monitoring-monitor-events>`
-- :ref:`Monitor connection pool events with Java Management Extensions (JMX) and JConsole <monitoring-jmx>`
-
-This page shows how to use information about the activity of the driver in code.
-If you would like to learn how to record events the driver performs,
-consider reading our :doc:`guide on logging </fundamentals/logging>`.
-
-.. _monitoring-monitor-events:
-
-Monitor Events
---------------
-
-To monitor an **event**, you must register a **listener** on your ``MongoClient``
-instance. 
-
-An event is any action that happens in code. The driver includes functionality
-for listening to a subset of the events that occur when the driver is running.
-
-A listener is a class that performs some action when certain events occur. All
-listener classes extend the ``EventListener`` interface. A listener's
-API defines the events it can respond to.
-
-Each method of a listener class represents a response to a certain event. Each
-method receives one argument: an object representing the event the method
-responds to. All event objects are a subclass of the ``EventObject`` class.  
-
-The MongoDB Java driver organizes the events it defines into three categories:
-
-- Command Events
-- Cluster Events
-- Connection Pool Events
-
-The following sections show how to monitor each event category.
-
-For a full list of the events you can monitor,
-:java-docs:`see the event package of the MongoDB Java Driver <apidocs/mongodb-driver-core/com/mongodb/event/package-summary.html>`.
-
-For more information on the classes and interfaces mentioned in this section,
-see the following API documentation:
-
-- `EventListener <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/EventListener.html>`__
-- `EventObject <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/EventObject.html>`__
-
-Command Events
-~~~~~~~~~~~~~~
 
 A command event is an event related to a MongoDB database command. Here are some
 examples of database commands that produce command events:
